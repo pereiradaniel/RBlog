@@ -1,5 +1,5 @@
-<h1>#PostNew</h1>
-<%= form_for :post, url: posts_path do |f| %>
+<h1>#PostEdit</h1>
+<%= form_for :post, url: post_path(@post), method: :patch do |f| %>
 
 	<% if @post.errors.any? %>
 		<div>

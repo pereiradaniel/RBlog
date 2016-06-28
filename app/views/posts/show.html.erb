@@ -1,2 +1,14 @@
-<%= @post.text %>
-<%= link_to 'Index', posts_path %>
+<h1>#PostShow</h1>
+<div>
+	<div>
+		<p>
+			<%= @post.text %>
+		</p>
+	</div>
+	<div>
+		<%= link_to 'Index', posts_path %>
+	</div>
+	<div>
+		<%= link_to 'Edit', edit_post_path(@post) %>
+	</div>
+</div>
