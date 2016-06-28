@@ -6,6 +6,16 @@
 		</p>
 	</div>
 	<div>
+		<% @post.comments.each do |comment| %>
+			<p>
+				Commenter: <%= comment.commenter %>
+			</p>
+			<p>
+				Comment: <%= comment.body %>
+			</p>
+		<% end %>
+	</div>
+	<div>
 		<h2>Add a comment:</h2>
 		<%= form_for([@post, @post.comments.build]) do |f| %>
 			<p>
