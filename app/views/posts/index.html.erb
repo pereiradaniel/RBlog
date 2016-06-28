@@ -1,5 +1,14 @@
-<%= link_to 'New Post', new_post_path %>
-<% @posts.each do |post| %>
-	<%= post.text %>
-	<%= link_to 'View', post_path(post) %>
-<% end %>
+<h1>#PostsIndex</h1>
+<div>
+	<%= link_to 'New Post', new_post_path %>
+</div>
+<div>
+	<% @posts.each do |post| %>
+		<div>
+			<div>
+				<%= post.text %>
+			</div>
+			<%= link_to 'View', post_path(post) %>
+		</div>
+	<% end %>
+</div>
