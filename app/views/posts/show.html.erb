@@ -6,14 +6,8 @@
 		</p>
 	</div>
 	<div>
-		<% @post.comments.each do |comment| %>
-			<p>
-				Commenter: <%= comment.commenter %>
-			</p>
-			<p>
-				Comment: <%= comment.body %>
-			</p>
-		<% end %>
+		<h2>Comments:</h2>
+		<%= render @post.comments %>
 	</div>
 	<div>
 		<h2>Add a comment:</h2>
