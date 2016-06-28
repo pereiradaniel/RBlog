@@ -1,0 +1,6 @@
+<%= form_for :post, url: posts_path do |f| %>
+	<%= f.label :text %>
+	<%= f.text_field :text %>
+	<%= f.submit %>
+<% end %>
+<%= link_to 'Index', posts_path %>
