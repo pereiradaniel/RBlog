@@ -22,7 +22,9 @@
 	<div>
 		<%= link_to 'Index', posts_path %>
 	</div>
-	<div>
-		<%= link_to 'Edit', edit_post_path(@post) %>
-	</div>
+	<% if current_user.id == @post.user_id %>
+		<div>
+			<%= link_to 'Edit', edit_post_path(@post) %>
+		</div>
+	<% end %>
 </div>

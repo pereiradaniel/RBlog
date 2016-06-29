@@ -12,14 +12,17 @@
 				<div>
 					<%= link_to 'View', post_path(post) %>
 				</div>
-				<div>
-					<%= link_to 'Edit', edit_post_path(post) %>
-				</div>
-				<div>
-					<%= link_to 'Destroy', post_path(post),
-						method: :delete,
-						data: { confirm: 'Are you sure?' } %>
-				</div>
+					<% if current_user.id == post.user_id %>
+						<div>
+							<%= link_to 'Edit', edit_post_path(post) %>
+						</div>
+						<div>
+							<%= link_to 'Destroy', post_path(post),
+							method: :delete,
+							data: { confirm: 'Are you sure?' } %>
+						</div>
+					<% else %>
+					<% end %>
 			</div>
 		</div>
 	<% end %>
