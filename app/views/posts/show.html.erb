@@ -10,8 +10,14 @@
 		<%= render @post.comments %>
 	</div>
 	<div>
-		<h2>Add a comment:</h2>
-		<%= render 'comments/form' %>
+		<% if !current_user %>
+			<h2>Login or Signup to add a comment!</h2>
+				<%= link_to 'Login', '/login' %>
+				<%= link_to 'Signup', '/signup' %>
+		<% else %>
+			<h2>Add a comment:</h2>
+			<%= render 'comments/form' %>
+		<% end %>
 	</div>
 	<div>
 		<%= link_to 'Index', posts_path %>
