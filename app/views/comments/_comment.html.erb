@@ -6,10 +6,6 @@
 </p>
 <% if current_user %>
 	<% if comment.user_id == current_user.id or comment.post.user_id == current_user.id %>
-		<div class="basic-button">
-			<%= link_to 'Destroy Comment', [comment.post, comment],
-					method: :delete,
-					data: { confirm: 'Are you sure?' } %>
-		</div>
+		<%= link_to 'Destroy Comment', [comment.post, comment], method: :delete, data: { confirm: 'Are you sure?' } %>
 	<% end %>
 <% end %>

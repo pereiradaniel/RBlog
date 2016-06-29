@@ -1,32 +1,20 @@
 <h1>#PostShow</h1>
-<div>
-	<div>
-		<p>
-			<%= @post.text %>
-		</p>
-	</div>
-	<div>
-		<h2>Comments:</h2>
-		<%= render @post.comments %>
-	</div>
-	<div>
-		<% if !current_user %>
-			<h2>Login or Signup to add a comment!</h2>
-				<%= link_to 'Login', '/login' %>
-				<%= link_to 'Signup', '/signup' %>
-		<% else %>
-			<h2>Add a comment:</h2>
-			<%= render 'comments/form' %>
-		<% end %>
-	</div>
-	<div class="basic-button">
-		<%= link_to 'Index', posts_path %>
-	</div>
-	<% if current_user %>
-		<% if current_user.id == @post.user_id %>
-			<div class="basic-button">
-				<%= link_to 'Edit', edit_post_path(@post) %>
-			</div>
-		<% end %>
+<p>
+	<%= @post.text %>
+</p>
+<h2>Comments:</h2>
+<%= render @post.comments %>
+<% if !current_user %>
+	<h2>Login or Signup to add a comment!</h2>
+		<%= link_to 'Login', '/login' %>
+		<%= link_to 'Signup', '/signup' %>
+<% else %>
+	<h2>Add a comment:</h2>
+	<%= render 'comments/form' %>
+<% end %>
+<%= link_to 'Index', posts_path %>
+<% if current_user %>
+	<% if current_user.id == @post.user_id %>
+		<%= link_to 'Edit', edit_post_path(@post) %>
 	<% end %>
-</div>
+<% end %>
