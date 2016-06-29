@@ -19,12 +19,12 @@
 			<%= render 'comments/form' %>
 		<% end %>
 	</div>
-	<div>
+	<div class="basic-button">
 		<%= link_to 'Index', posts_path %>
 	</div>
 	<% if current_user %>
 		<% if current_user.id == @post.user_id %>
-			<div>
+			<div class="basic-button">
 				<%= link_to 'Edit', edit_post_path(@post) %>
 			</div>
 		<% end %>

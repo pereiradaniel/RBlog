@@ -1,0 +1,25 @@
+.nav-bar {
+	margin: auto;
+	padding: 1em;
+}
+.app-title {
+	display: inline-block;
+}
+.user-options {
+	display: inline-block;
+	float: right;
+}
+.user-option {
+	display: inline-block;
+}
+.basic-button {
+	display: inline-block;
+	padding: 0.5em;
+	border-radius: 2px;
+	margin: auto;
+	background-color: rgba(0,0,0,.44);
+	text-align: center;
+}
+.basic-button a {
+	color: #fff;
+}
