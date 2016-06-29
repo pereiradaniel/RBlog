@@ -17,6 +17,7 @@
 	<p>
 		<%= f.label :text %>
 		<%= f.text_field :text %>
+		<%= f.hidden_field :user_id, {value: current_user.id} %>
 	</p>
 	<p>
 		<%= f.submit %>
