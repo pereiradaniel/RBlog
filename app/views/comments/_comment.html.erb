@@ -4,8 +4,11 @@
 <p>
 	Comment: <%= comment.body %>
 </p>
-<p>
-	<%= link_to 'Destroy Comment', [comment.post, comment],
-			method: :delete,
-			data: { confirm: 'Are you sure?' } %>
-</p>
+<% if comment.user_id == current_user.id or comment.post.user_id == current_user.id %>
+	<p>
+		<%= link_to 'Destroy Comment', [comment.post, comment],
+				method: :delete,
+				data: { confirm: 'Are you sure?' } %>
+	</p>
+<% else %>
+<% end %>
