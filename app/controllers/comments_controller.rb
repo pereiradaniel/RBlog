@@ -1,7 +1,6 @@
 class CommentsController < ApplicationController
 	
-	http_basic_authenticate_with name: "xxx", password: "yyy",
-	only: :destroy
+	before_filter :authorize, :except => [:index, :show]
 
 	def create
 		@post = Post.find(params[:post_id])
