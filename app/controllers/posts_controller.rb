@@ -16,6 +16,9 @@ class PostsController < ApplicationController
 
 	def edit
 		@post = Post.find(params[:id])
+		if !user_can_edit(@post)
+			redirect_to @post
+		end
 	end
 
 	def create
@@ -31,25 +34,25 @@ class PostsController < ApplicationController
 	def update
 		@post = Post.find(params[:id])
 
-		if @post.user_id == current_user.id
+		if !user_can_edit(@post)
+			redirect_to @post
+		else
 			if @post.update(post_params)
 				redirect_to @post
 			else
 				render 'edit'
 			end
-		else
-			redirect_to @post
 		end
 	end
 
 	def destroy
 		@post = Post.find(params[:id])
-
-		if @post.user_id == current_user.id 
-			@post.destroy
+		if !user_can_edit(@post)
+			redirect_to @post
 		else
+			@post.destroy
+			redirect_to posts_path
 		end
-		redirect_to posts_path
 	end
 
 	private
