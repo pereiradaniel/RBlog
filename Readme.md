@@ -1,4 +1,4 @@
-# INFO
+# RUBY BLOG
 ---
 
 Ruby Blog project.  This is a good repo for getting started with rails.  Just a simple blog app.
